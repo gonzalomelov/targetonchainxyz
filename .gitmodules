@@ -1,0 +1,6 @@
+[submodule "shopify-app"]
+	path = shopify-app
+	url = git@github.com:gonzalomelov/shopify-app.git
+[submodule "target-onchain"]
+	path = target-onchain
+	url = git@github.com:gonzalomelov/target-onchain.git
