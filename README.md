@@ -1,3 +1,5 @@
+![Logo](https://i.imgur.com/SwBWVQw.png)
+
 
 # Target Onchain - Hyper-Personalization Platform 🚀
 
