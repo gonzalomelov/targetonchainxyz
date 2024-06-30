@@ -7,3 +7,6 @@
 [submodule "product-recommender"]
 	path = product-recommender
 	url = git@github.com:gonzalomelov/product-recommender.git
+[submodule "eas-indexing-service"]
+	path = eas-indexing-service
+	url = git@github.com:gonzalomelov/eas-indexing-service.git
