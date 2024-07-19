@@ -1,4 +1,5 @@
-![Logo](https://i.imgur.com/SwBWVQw.png)
+[<img src="public/assets/images/Shopify-App-Store-Badge-Final-White.png">](https://apps.shopify.com/target-onchain)
+
 
 
 # Target Onchain - Hyper-Personalization Platform 🚀
