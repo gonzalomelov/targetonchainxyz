@@ -10,3 +10,6 @@
 [submodule "eas-indexing-service"]
 	path = eas-indexing-service
 	url = git@github.com:gonzalomelov/eas-indexing-service.git
+[submodule "target-onchain-nfts-for-you"]
+	path = target-onchain-nfts-for-you
+	url = git@github.com:gonzalomelov/target-onchain-nfts-for-you
