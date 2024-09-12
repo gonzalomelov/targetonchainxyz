@@ -1,0 +1,36 @@
+{
+  "name": "target-onchain-monorepo",
+  "private": true,
+  "workspaces": [
+    "shopify-app",
+    "target-onchain",
+    "product-recommender",
+    "eas-indexing-service",
+    "target-onchain-nfts-for-you",
+    "target-onchain-nfts-for-you/packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspaces run dev",
+    "build": "yarn workspaces run build",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint",
+    "format": "yarn workspaces run format",
+    "clean": "yarn workspaces run clean",
+    "start": "yarn workspaces run start",
+    "db:migrate": "yarn workspace @target-monorepo/target-onchain db:migrate",
+    "storybook": "yarn workspace @target-monorepo/target-onchain storybook",
+    "chain": "yarn workspace @target-monorepo/target-onchain-nfts-for-you chain",
+    "deploy": "yarn workspace @target-monorepo/target-onchain-nfts-for-you deploy",
+    "eas:start": "yarn workspace @target-monorepo/eas-indexing-service start"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
