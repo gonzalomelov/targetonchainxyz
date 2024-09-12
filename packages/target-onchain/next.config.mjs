@@ -25,6 +25,10 @@ export default withSentryConfig(
       },
       poweredByHeader: false,
       reactStrictMode: true,
+      transpilePackages: ['@target-monorepo/shared-ui'], // Add this if you have shared packages
+      experimental: {
+        externalDir: true,
+      },
     }),
   ),
   {

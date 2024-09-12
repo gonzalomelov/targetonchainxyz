@@ -14,6 +14,10 @@ const nextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  transpilePackages: ['@target-monorepo/shared-ui'], // Add this if you have shared packages
+  experimental: {
+    externalDir: true, // This allows importing from outside the app directory
+  },
 };
 
 module.exports = nextConfig;
