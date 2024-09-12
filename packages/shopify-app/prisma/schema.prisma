@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// [START session-model]
+model Session {
+  id          String    @id
+  shop        String
+  state       String
+  isOnline    Boolean   @default(false)
+  scope       String?
+  expires     DateTime?
+  accessToken String
+  userId      BigInt?
+  clerkDbJwt  String?   @db.Text
+  storefrontAccessToken String?
+}
+// [END session-model]
+
+// [START frame-model]
+model Frame {
+  id               Int      @id @default(autoincrement())
+  title            String
+  shop             String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @default(now())
+  image            String @db.VarChar(512)
+  button           String
+  matchingCriteria MatchingCriteria     @default(ALL)
+}
+// [END frame-model]
+
+// [START product-model]
+model Product {
+  id                    String   @id
+  title                 String
+  description           String   @db.Text
+  shop                  String
+  handle                String
+  variantId             String
+  variantFormattedPrice String
+  alt                   String   @db.Text
+  image                 String
+  createdAt             DateTime @default(now())
+}
+// [END product-model]
+
+// [START user-product-model]
+model UserProduct {
+  walletAddress String
+  frameId       Int
+  productId1    String
+  productId2    String?
+  productId3    String?
+
+  @@id([walletAddress, frameId])
+  @@index([walletAddress, frameId])
+}
+// [END user-product-model]
+
+// [START group-profile-model]
+model GroupProfile {
+  profileText String   @id @db.VarChar(100)
+  message      String?   @db.Text
+  createdAt   DateTime @default(now())
+}
+// [END group-profile-model]
+
+// [START group-wallet-model]
+model GroupWallet {
+  profileText   String
+  walletAddress String
+  createdAt     DateTime @default(now())
+
+  @@id([profileText, walletAddress])
+  @@index([profileText, walletAddress])
+}
+// [END group-wallet-model]
+
+// [START group-recommendation-model]
+model GroupRecommendation {
+  frameId      Int
+  profileText  String
+  productId    String
+  productTitle String
+  message      String   @db.Text
+  createdAt    DateTime @default(now())
+
+  @@id([frameId, profileText, productId])
+  @@index([frameId, profileText, productId])
+}
+// [END group-recommendation-model]
+
+enum MatchingCriteria {
+  RECEIPTS_XYZ_ALL_TIME_RUNNING
+  COINBASE_ONCHAIN_VERIFICATIONS_COUNTRY
+  COINBASE_ONCHAIN_VERIFICATIONS_ACCOUNT
+  COINBASE_ONCHAIN_VERIFICATIONS_ONE
+  POAPS_OWNED
+  NFTS_OWNED
+  ALL
+}

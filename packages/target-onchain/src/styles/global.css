@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** TODO **/
+.review_this_code {}
+
+:root {
+  --color-text-light: #1f2937; /* dark gray for light mode */
+  --color-text-dark: #f9fafb;  /* light gray for dark mode */
+}
+
+.dark {
+  --color-text-light: #f9fafb;
+  --color-text-dark: #1f2937;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <p>Processing...</p>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const token = params.get('__clerk_db_jwt');
+            if (token) {
+                window.opener.postMessage({ source: 'target-onchain', token }, window.location.origin);
+            } else {
+                alert('Close the window and try again');
+            }
+        })();
+    </script>
+</body>
+</html>

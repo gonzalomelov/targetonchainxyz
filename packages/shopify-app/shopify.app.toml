@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "3df3c364aa541c89192bef6f84f7298b"
+name = "target-onchain-test"
+handle = "target-onchain-test"
+application_url = "https://colours-news-displayed-recruiting.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "onchain-summer.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_product_listings,unauthenticated_read_checkouts,write_resource_feedbacks"
+
+[auth]
+redirect_urls = [
+  "https://colours-news-displayed-recruiting.trycloudflare.com/auth/callback",
+  "https://colours-news-displayed-recruiting.trycloudflare.com/auth/shopify/callback",
+  "https://colours-news-displayed-recruiting.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
