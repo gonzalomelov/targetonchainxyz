@@ -1,5 +1,5 @@
 {
-  "name": "target-onchain-app",
+  "name": "@target-monorepo/target-onchain",
   "version": "1.22.0",
   "scripts": {
     "dev:spotlight": "spotlight-sidecar",

@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@target-monorepo/shopify-app",
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production remix build",
