@@ -15,7 +15,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+      "@target-monorepo/*": ["../../*"]
     },
     "types": [
       "@shopify/app-bridge-types"
